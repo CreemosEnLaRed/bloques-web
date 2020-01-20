@@ -2,8 +2,8 @@
 import {ce, ct} from './dom.js';
 import {getChildBlockList} from './blockly.js';
 
-function childsToDom(obj) {
-  return obj.childs.map((child, _i, _it) => child.toDom());
+function childsToDom(obj, indent) {
+  return obj.childs.map((child, _i, _it) => child.toDom(indent));
 }
 
 function Par(attrs, childs) {
@@ -11,8 +11,8 @@ function Par(attrs, childs) {
   this.childs = childs;
 }
 
-Par.prototype.toDom = function() {
-  return ce('p', {}, childsToDom(this));
+Par.prototype.toDom = function(indent) {
+  return ce('p', {}, indent, childsToDom(this, indent + 1));
 };
 
 function Title(attrs, childs) {
@@ -21,15 +21,15 @@ function Title(attrs, childs) {
   this.childs = childs;
 }
 
-Title.prototype.toDom = function() {
-  return ce(this.level, {}, childsToDom(this));
+Title.prototype.toDom = function(indent) {
+  return ce(this.level, {}, indent, childsToDom(this, indent + 1));
 };
 
 function Text(attrs) {
   this.text = attrs.text;
 }
 
-Text.prototype.toDom = function() {
+Text.prototype.toDom = function(_indent) {
   return ct(this.text);
 };
 
@@ -38,11 +38,13 @@ function WrapText(attrs) {
   this.type = attrs.type;
 }
 
-WrapText.prototype.toDom = function() {
+WrapText.prototype.toDom = function(indent) {
   if (this.type === 'underline') {
-    return ce('span', {style: 'text-decoration: underline'}, [ct(this.text)]);
+    return ce('span', {style: 'text-decoration: underline'}, indent, [
+      ct(this.text)
+    ]);
   } else {
-    return ce(this.type, {}, [ct(this.text)]);
+    return ce(this.type, {}, indent, [ct(this.text)]);
   }
 };
 
@@ -51,8 +53,8 @@ function Img(attrs) {
   this.alt = attrs.alt;
 }
 
-Img.prototype.toDom = function() {
-  return ce('img', {src: this.src, alt: this.alt});
+Img.prototype.toDom = function(indent) {
+  return ce('img', {src: this.src, alt: this.alt}, indent);
 };
 
 function Link(attrs) {
@@ -60,8 +62,8 @@ function Link(attrs) {
   this.label = attrs.label;
 }
 
-Link.prototype.toDom = function() {
-  return ce('a', {href: this.href}, [ct(this.label)]);
+Link.prototype.toDom = function(indent) {
+  return ce('a', {href: this.href}, indent, [ct(this.label)]);
 };
 
 function List(attrs, childs) {
@@ -69,16 +71,16 @@ function List(attrs, childs) {
   this.childs = childs;
 }
 
-List.prototype.toDom = function() {
-  return ce(this.type, {}, childsToDom(this));
+List.prototype.toDom = function(indent) {
+  return ce(this.type, {}, indent, childsToDom(this, indent + 1));
 };
 
 function Li(_attrs, childs) {
   this.childs = childs;
 }
 
-Li.prototype.toDom = function() {
-  return ce('li', {}, childsToDom(this));
+Li.prototype.toDom = function(indent) {
+  return ce('li', {}, indent, childsToDom(this, indent + 1));
 };
 
 function Div(attrs, childs) {
@@ -86,8 +88,8 @@ function Div(attrs, childs) {
   this.childs = childs;
 }
 
-Div.prototype.toDom = function() {
-  return ce('div', {}, childsToDom(this));
+Div.prototype.toDom = function(indent) {
+  return ce('div', {}, indent, childsToDom(this, indent + 1));
 };
 
 function fieldValue(block, name) {
