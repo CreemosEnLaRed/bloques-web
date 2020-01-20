@@ -2,13 +2,13 @@
 <html>
   <head>
 	<meta charset="utf-8">
-	<title>Web Blocks</title>
+	<title>Bloques Web</title>
 	<script src="./js/blockly_compressed.js"></script>
 	<script src="./js/blocks_compressed.js"></script>
 	<script src="./js/msg/js/en.js"></script>
 
 	<script src="./js/html-simple.js"></script>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="lib/bootstrap.min.css">
   </head>
   <body class="p-3">
 	<div class="row row-cols-2" style="height: 92vh">
@@ -28,27 +28,28 @@
 	</div>
 
   <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
-    <category name="HTML" colour="%{BKY_LOGIC_HUE}">
+    <category name="Texto" colour="0">
 		<block type="hs_text">
 			<value name="value">
 				<shadow type="text"></shadow>
 			</value>
 		</block>
+		<block type="hs_wraptext"></block>
+		<block type="hs_link"></block>
 		<block type="hs_par"></block>
 		<block type="hs_title">
 			<value name="value">
 				<shadow type="text"></shadow>
 			</value>
 		</block>
+    </category>
+    <category name="Lista" colour="90">
 		<block type="hs_list"></block>
 		<block type="hs_li"></block>
     </category>
-    <category name="Valores" colour="%{BKY_LOGIC_HUE}">
-		<block type="logic_boolean"></block>
-		<block type="text"></block>
-		<block type="math_number">
-			<field name="NUM">123</field>
-		</block>
+    <category name="Otros" colour="180">
+		<block type="hs_img"></block>
+		<block type="hs_div"></block>
     </category>
   </xml>
 
