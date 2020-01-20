@@ -3,12 +3,12 @@
   <head>
 	<meta charset="utf-8">
 	<title>Bloques Web</title>
-	<script src="./js/blockly_compressed.js"></script>
-	<script src="./js/blocks_compressed.js"></script>
-	<script src="./js/msg/js/en.js"></script>
+	<script src="./lib/blockly_compressed.js"></script>
+	<script src="./lib/blocks_compressed.js"></script>
+	<script src="./lib/msg/js/en.js"></script>
 
-	<script src="./js/html-simple.js"></script>
-	<link rel="stylesheet" href="lib/bootstrap.min.css">
+	<script src="./lib/html-simple.js"></script>
+	<link rel="stylesheet" href="./lib/bootstrap.min.css">
   </head>
   <body class="p-3">
 	<div class="row row-cols-2" style="height: 92vh">
@@ -16,14 +16,17 @@
 	  <div class="col">
         <ul class="nav nav-tabs">
           <li class="nav-item">
-            <a class="nav-link active" href="#pagina">Pagina</a>
+            <a id="tabPagina" class="nav-link active" href="#pagina">Pagina</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#html">HTML</a>
+            <a id="tabHTML" class="nav-link" href="#html">HTML</a>
           </li>
         </ul>
 
-        <div class="p-3">Aca va a ir la pagina renderizada, en el otro tab va a estar el HTML generado</div>
+        <div id="targetDOM" class="p-3"><p>Arrastra bloques a la izquierda para ver el resultado aca.</div>
+
+        <div id="targetHTML" style="display:none" class="p-3"></div>
+
 	  </div>
 	</div>
 
@@ -53,11 +56,7 @@
     </category>
   </xml>
 
-  <script>
-    var demoWorkspace = Blockly.inject('blocklyDiv',
-        {media: '../../media/',
-         toolbox: document.getElementById('toolbox')});
-  </script>
+  <script type="module" src="js/app.js"></script>
 
 </body>
 </html>
