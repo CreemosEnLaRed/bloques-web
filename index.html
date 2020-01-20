@@ -28,27 +28,28 @@
 	</div>
 
   <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
-    <category name="HTML" colour="%{BKY_LOGIC_HUE}">
+    <category name="Texto" colour="0">
 		<block type="hs_text">
 			<value name="value">
 				<shadow type="text"></shadow>
 			</value>
 		</block>
+		<block type="hs_wraptext"></block>
+		<block type="hs_link"></block>
 		<block type="hs_par"></block>
 		<block type="hs_title">
 			<value name="value">
 				<shadow type="text"></shadow>
 			</value>
 		</block>
+    </category>
+    <category name="Lista" colour="90">
 		<block type="hs_list"></block>
 		<block type="hs_li"></block>
     </category>
-    <category name="Valores" colour="%{BKY_LOGIC_HUE}">
-		<block type="logic_boolean"></block>
-		<block type="text"></block>
-		<block type="math_number">
-			<field name="NUM">123</field>
-		</block>
+    <category name="Otros" colour="180">
+		<block type="hs_img"></block>
+		<block type="hs_div"></block>
     </category>
   </xml>
 
