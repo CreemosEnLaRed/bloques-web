@@ -43,8 +43,8 @@ Blockly.JavaScript['hs_div'] = function(block) {
 };
 
 Blockly.JavaScript['hs_wraptext'] = function(block) {
+  var text_text = block.getFieldValue('TEXT');
   var dropdown_type = block.getFieldValue('TYPE');
-  var statements_items = Blockly.JavaScript.statementToCode(block, 'ITEMS');
   // TODO: Assemble JavaScript into code variable.
   var code = '...;\n';
   return code;

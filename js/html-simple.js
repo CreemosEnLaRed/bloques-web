@@ -83,9 +83,11 @@ Blockly.Blocks['hs_div'] = {
 
 Blockly.Blocks['hs_wraptext'] = {
   init: function() {
-    this.appendStatementInput("ITEMS")
-        .setCheck(null)
-        .appendField(new Blockly.FieldDropdown([["negrita","strong"], ["italica","em"], ["subrayado","underline"], ["simple","span"]]), "TYPE");
+    this.appendDummyInput()
+        .appendField("\"")
+        .appendField(new Blockly.FieldTextInput("texto..."), "TEXT")
+        .appendField("\"")
+        .appendField(new Blockly.FieldDropdown([["en negrita","strong"], ["en italica","em"], ["subrayado","underline"], ["simple","span"]]), "TYPE");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(0);
