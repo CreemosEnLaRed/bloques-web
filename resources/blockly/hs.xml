@@ -331,26 +331,38 @@
     <field name="INLINE">AUTO</field>
     <field name="CONNECTIONS">BOTH</field>
     <statement name="INPUTS">
-      <block type="input_statement" id="8WQOtKvuEhRSF!)Rf}v0">
-        <field name="INPUTNAME">ITEMS</field>
+      <block type="input_dummy" id="--xdgBRX!O:UVtQ1|d*]">
         <field name="ALIGN">LEFT</field>
         <statement name="FIELDS">
-          <block type="field_dropdown" id="Fg^+/[T:]~VeLVzBQu)%">
-            <mutation options="[&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;]"/>
-            <field name="FIELDNAME">TYPE</field>
-            <field name="USER0">negrita</field>
-            <field name="CPU0">strong</field>
-            <field name="USER1">italica</field>
-            <field name="CPU1">em</field>
-            <field name="USER2">subrayado</field>
-            <field name="CPU2">underline</field>
-            <field name="USER3">simple</field>
-            <field name="CPU3">span</field>
+          <block type="field_static" id="$%|ZqOO(Mgj)g-njg+Qm">
+            <field name="TEXT">"</field>
+            <next>
+              <block type="field_input" id="P%[pT6{6bq5`~;dD*bg5">
+                <field name="TEXT">texto...</field>
+                <field name="FIELDNAME">TEXT</field>
+                <next>
+                  <block type="field_static" id="9gpkoAwvNU4td!U4KEk0">
+                    <field name="TEXT">"</field>
+                    <next>
+                      <block type="field_dropdown" id="Fg^+/[T:]~VeLVzBQu)%">
+                        <mutation options="[&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;]"/>
+                        <field name="FIELDNAME">TYPE</field>
+                        <field name="USER0">en negrita</field>
+                        <field name="CPU0">strong</field>
+                        <field name="USER1">en italica</field>
+                        <field name="CPU1">em</field>
+                        <field name="USER2">subrayado</field>
+                        <field name="CPU2">underline</field>
+                        <field name="USER3">simple</field>
+                        <field name="CPU3">span</field>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
           </block>
         </statement>
-        <value name="TYPE">
-          <shadow type="type_null" id="B]=x52xq2:37CXkQP1w="/>
-        </value>
       </block>
     </statement>
     <value name="TOOLTIP">
