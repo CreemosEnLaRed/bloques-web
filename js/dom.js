@@ -1,5 +1,6 @@
 //@format
 
+const CAN_INDENT = {div: true, ul: true, ol: true};
 function ce(tagName, attrs, indentLevel, childs) {
   const node = document.createElement(tagName);
 
@@ -10,17 +11,23 @@ function ce(tagName, attrs, indentLevel, childs) {
   }
 
   if (childs && childs.length > 0) {
-    const baseIndentStr = getIndentStr(indentLevel),
+    const canIndent = CAN_INDENT[tagName],
+      baseIndentStr = getIndentStr(indentLevel),
       indentStr = baseIndentStr + BASE_INDENT;
 
-    node.appendChild(newLine());
-    node.appendChild(ct(baseIndentStr));
     for (let i = 0, len = childs.length; i < len; i += 1) {
-      node.appendChild(ct(indentStr));
+      if (canIndent) {
+        node.appendChild(newLine());
+        node.appendChild(ct(indentStr));
+      }
+
       node.appendChild(childs[i]);
     }
-    node.appendChild(newLine());
-    node.appendChild(ct(indentStr));
+
+    if (canIndent) {
+      node.appendChild(newLine());
+      node.appendChild(ct(baseIndentStr));
+    }
   }
 
   return node;
