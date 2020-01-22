@@ -1,6 +1,6 @@
 //@format
 /*globals require, monaco*/
-require.config({paths: {vs: '../lib/vs'}});
+require.config({paths: {vs: './lib/vs'}});
 
 require.config({
   'vs/nls': {
