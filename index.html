@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<meta charset="utf-8">
-	<title>Bloques Web</title>
-	<script src="./lib/blockly_compressed.js"></script>
-	<script src="./lib/blocks_compressed.js"></script>
-	<script src="./lib/msg/js/en.js"></script>
+    <meta charset="utf-8">
+    <title>Bloques Web</title>
+    <script src="./lib/blockly_compressed.js"></script>
+    <script src="./lib/blocks_compressed.js"></script>
+    <script src="./lib/msg/js/en.js"></script>
 
-	<script src="./lib/html-simple.js"></script>
-	<link rel="stylesheet" href="./lib/bootstrap.min.css">
+    <script src="./lib/html-simple.js"></script>
+    <link rel="stylesheet" href="./lib/bootstrap.min.css">
   </head>
   <body class="p-3">
-	<div class="row row-cols-2" style="height: 92vh">
-	  <div id="blocklyDiv" class="col"></div>
-	  <div class="col">
+    <div class="row row-cols-2" style="height: 92vh">
+      <div id="blocklyDiv" class="col"></div>
+      <div class="col">
         <ul class="nav nav-tabs">
           <li class="nav-item">
             <a id="tabPagina" class="nav-link active" href="#pagina">Pagina</a>
@@ -25,38 +25,38 @@
 
         <div id="targetDOM" class="p-3"><p>Arrastra bloques a la izquierda para ver el resultado aca.</div>
 
-        <div id="targetHTML" style="display:none;white-space:pre;font-family:monospace" class="p-3"></div>
-
-	  </div>
-	</div>
+        <div id="targetHTML" style="height:80vh;margin:2em 0"></div>
+      </div>
+    </div>
 
   <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
     <category name="Texto" colour="0">
-		<block type="hs_text">
-			<value name="value">
-				<shadow type="text"></shadow>
-			</value>
-		</block>
-		<block type="hs_wraptext"></block>
-		<block type="hs_link"></block>
-		<block type="hs_par"></block>
-		<block type="hs_title">
-			<value name="value">
-				<shadow type="text"></shadow>
-			</value>
-		</block>
+        <block type="hs_text">
+            <value name="value">
+                <shadow type="text"></shadow>
+            </value>
+        </block>
+        <block type="hs_wraptext"></block>
+        <block type="hs_link"></block>
+        <block type="hs_par"></block>
+        <block type="hs_title">
+            <value name="value">
+                <shadow type="text"></shadow>
+            </value>
+        </block>
     </category>
     <category name="Lista" colour="90">
-		<block type="hs_list"></block>
-		<block type="hs_li"></block>
+        <block type="hs_list"></block>
+        <block type="hs_li"></block>
     </category>
     <category name="Otros" colour="180">
-		<block type="hs_img"></block>
-		<block type="hs_div"></block>
+        <block type="hs_img"></block>
+        <block type="hs_div"></block>
     </category>
   </xml>
 
   <script type="module" src="js/app.js"></script>
-
+  <script src="../lib/vs/loader.js"></script>
+  <script src="./js/monacoloader.js"></script>
 </body>
 </html>

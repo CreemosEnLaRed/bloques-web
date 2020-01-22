@@ -5,7 +5,7 @@ import {byId, setDisplay, ct} from './dom.js';
 import {setup} from './hs.js';
 import {getBlockListFromBlock} from './blockly.js';
 
-function onWorkspaceUpdate(_e, workspace, targetDomNode, targetHTMLNode) {
+function onWorkspaceUpdate(_e, workspace, targetDomNode, editor) {
   targetDomNode.innerHTML = '';
   workspace.getTopBlocks(true).forEach((block, _i, _it) =>
     getBlockListFromBlock(block).forEach((childBlock, _j, _it1) => {
@@ -14,9 +14,10 @@ function onWorkspaceUpdate(_e, workspace, targetDomNode, targetHTMLNode) {
     })
   );
 
-  targetHTMLNode.innerText = targetDomNode.innerHTML;
+  editor.setValue(targetDomNode.innerHTML);
 }
 
+let editor = null;
 function main() {
   const workspace = Blockly.inject('blocklyDiv', {
       media: './media/',
@@ -28,7 +29,7 @@ function main() {
     tabHTML = byId('tabHTML');
 
   workspace.addChangeListener(e =>
-    onWorkspaceUpdate(e, workspace, targetDomNode, targetHTMLNode)
+    onWorkspaceUpdate(e, workspace, targetDomNode, editor)
   );
   setup(Blockly);
 
@@ -47,4 +48,8 @@ function main() {
   });
 }
 
+window.appOnEditorLoaded = function(ed, node) {
+  editor = ed;
+  node.style.display = 'none';
+};
 main();
