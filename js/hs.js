@@ -97,7 +97,7 @@ function fieldValue(block, name) {
 }
 
 function getItems(block) {
-  const children = getChildBlockList(block);
+  const children = getChildBlockList(block, 'ITEMS');
   return children.map((child, _i, _it) => child.hsToDom());
 }
 
