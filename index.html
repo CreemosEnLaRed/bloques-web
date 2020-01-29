@@ -61,6 +61,29 @@
     <category name="Lista" colour="90">
         <block type="hs_list"></block>
         <block type="hs_li"></block>
+
+        <label text="Plantillas"></label>
+
+        <block type="hs_list">
+            <statement name="ITEMS">
+                <block type="hs_li">
+                    <statement name="ITEMS">
+                        <block type="hs_text">
+                            <field name="TEXT">Rojo</field>
+                        </block>
+                    </statement>
+                    <next>
+                        <block type="hs_li">
+                            <statement name="ITEMS">
+                                <block type="hs_text">
+                                    <field name="TEXT">Azul</field>
+                                </block>
+                            </statement>
+                        </block>
+                    </next>
+                </block>
+            </statement>
+        </block>
     </category>
     <category name="Otros" colour="180">
         <block type="hs_img"></block>
