@@ -1,10 +1,6 @@
 //@format
-import {ce, ct} from './dom.js';
-import {getChildBlockList} from './blockly.js';
-
-function childsToDom(obj, indent) {
-  return obj.childs.map((child, _i, _it) => child.toDom(indent));
-}
+import {ce, ct, div, span, img} from './dom.js';
+import {childsToDom, setupTags, fieldValue, getItems} from './domgen.js';
 
 function Par(attrs, childs) {
   this.attrs = attrs;
@@ -40,9 +36,7 @@ function WrapText(attrs) {
 
 WrapText.prototype.toDom = function(indent) {
   if (this.type === 'underline') {
-    return ce('span', {style: 'text-decoration: underline'}, indent, [
-      ct(this.text)
-    ]);
+    return span({style: 'text-decoration: underline'}, indent, [ct(this.text)]);
   } else {
     return ce(this.type, {}, indent, [ct(this.text)]);
   }
@@ -54,7 +48,7 @@ function Img(attrs) {
 }
 
 Img.prototype.toDom = function(indent) {
-  return ce('img', {src: this.src, alt: this.alt}, indent);
+  return img({src: this.src, alt: this.alt}, indent);
 };
 
 function Link(attrs) {
@@ -89,17 +83,8 @@ function Div(attrs, childs) {
 }
 
 Div.prototype.toDom = function(indent) {
-  return ce('div', {}, indent, childsToDom(this, indent + 1));
+  return div({}, indent, childsToDom(this, indent + 1));
 };
-
-function fieldValue(block, name) {
-  return block.getFieldValue(name);
-}
-
-function getItems(block) {
-  const children = getChildBlockList(block, 'ITEMS');
-  return children.map((child, _i, _it) => child.hsToDom());
-}
 
 function hsToDomPar() {
   return new Par({}, getItems(this));
@@ -167,13 +152,7 @@ const TAGS = [
   };
 
 function setup(Blockly) {
-  const Blocks = Blockly.Blocks;
-
-  TAGS.forEach((type, _i, _it) => setupBlock(Blocks[type], type));
-}
-
-function setupBlock(Block, type) {
-  Block.hsToDom = SERIALIZERS[type];
+  setupTags(Blockly, TAGS, SERIALIZERS);
 }
 
 export {setup};

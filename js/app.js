@@ -2,7 +2,8 @@
 /*globals Blockly*/
 
 import {byId, setDisplay, ct} from './dom.js';
-import {setup} from './hs.js';
+import {setup as setupHS} from './hs.js';
+import {setup as setupBS} from './bs.js';
 import {getBlockListFromBlock} from './blockly.js';
 
 function onWorkspaceUpdate(_e, workspace, targetDomNode, editor) {
@@ -31,7 +32,8 @@ function main() {
   workspace.addChangeListener(e =>
     onWorkspaceUpdate(e, workspace, targetDomNode, editor)
   );
-  setup(Blockly);
+  setupHS(Blockly);
+  setupBS(Blockly);
 
   tabPagina.addEventListener('click', _ => {
     setDisplay(targetHTMLNode, 'none');

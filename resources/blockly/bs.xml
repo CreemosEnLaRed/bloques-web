@@ -400,7 +400,7 @@
             <field name="TEXT">Imagen en</field>
             <next>
               <block type="field_input" id="T(+w+YjT}pOea:0mf@Sd">
-                <field name="TEXT">img/rainbow.png</field>
+                <field name="TEXT">http://pagina.com/imagen.png</field>
                 <field name="FIELDNAME">SRC</field>
                 <next>
                   <block type="field_static" id="(?jm%]MO)^QE)E|eP3O@">
@@ -795,7 +795,7 @@
             <field name="TEXT">Imagen de Carta</field>
             <next>
               <block type="field_input" id="lHHX*E2t]?h($eZu*@0#">
-                <field name="TEXT">img/rainbow.png</field>
+                <field name="TEXT">img/image.jpg</field>
                 <field name="FIELDNAME">SRC</field>
                 <next>
                   <block type="field_static" id="Qo~A+|g_vOm1v|YPv}ep">

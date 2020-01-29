@@ -78,4 +78,12 @@ function setDisplay(node, value) {
   node.style.display = value;
 }
 
-export {ce, ct, byId, setDisplay};
+function makeTag(label) {
+  return (attrs, indent, childs) => ce(label, attrs, indent, childs);
+}
+
+const div = makeTag('div'),
+  span = makeTag('span'),
+  img = makeTag('img');
+
+export {ce, ct, div, span, img, byId, setDisplay};
