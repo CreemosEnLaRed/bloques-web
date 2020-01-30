@@ -97,16 +97,10 @@
       </block>
     </value>
     <value name="TOPTYPE">
-      <shadow type="type_null" id="0}#^{Vu?$n%f29#w3W)v"/>
-      <block type="type_other" id="W^4u{{%0q;/j?e]wJBMC">
-        <field name="TYPE">dom</field>
-      </block>
+      <shadow type="type_null" id="ewC]7?U5`lexuQetu5VH"/>
     </value>
     <value name="BOTTOMTYPE">
-      <shadow type="type_null" id="?3e,Z0PD$s,b#tuwFhvX"/>
-      <block type="type_other" id="I9b4qHe)dc)IVUf(:=z}">
-        <field name="TYPE">dom</field>
-      </block>
+      <shadow type="type_null" id="dT^}XH2u=vl/G%DC6gx."/>
     </value>
     <value name="COLOUR">
       <block type="colour_hue" id="M5.aRP_eHL]2Zds;MH:J">
@@ -210,16 +204,10 @@
       </block>
     </value>
     <value name="TOPTYPE">
-      <shadow type="type_null" id="q@g[,?b^0y38Mc,l7[Q;"/>
-      <block type="type_other" id="r-C5t4y6DIh(-`EZ*%%d">
-        <field name="TYPE">dom</field>
-      </block>
+      <shadow type="type_null" id="Mwqh_1-}d`Kt_D$^_3d("/>
     </value>
     <value name="BOTTOMTYPE">
-      <shadow type="type_null" id="%5ZnXU`z9XkjzU;C_uw;"/>
-      <block type="type_other" id="./9nC0mzOOK-~q5tS9?9">
-        <field name="TYPE">dom</field>
-      </block>
+      <shadow type="type_null" id="bss8_FG|Lg6!,p,Gw!k5"/>
     </value>
     <value name="COLOUR">
       <block type="colour_hue" id="=`5#9#C.g82T(ca5,VbN">
@@ -805,9 +793,15 @@
     </value>
     <value name="TOPTYPE">
       <shadow type="type_null" id="`(5?^4-m93rK_Y4EsPBZ"/>
+      <block type="type_other" id="]lQ7@gdjQVZ6.EEi2x~I">
+        <field name="TYPE">bs_card_body</field>
+      </block>
     </value>
     <value name="BOTTOMTYPE">
       <shadow type="type_null" id="|N_!Z*4CP31vQMtugcBN"/>
+      <block type="type_other" id="z0Mk4N^{aoMc4nIFUU1+">
+        <field name="TYPE">bs_card_body</field>
+      </block>
     </value>
     <value name="COLOUR">
       <block type="colour_hue" id=",(WF]%r-XcDdQsKM*EdD">
@@ -884,9 +878,15 @@
     </value>
     <value name="TOPTYPE">
       <shadow type="type_null" id="uadCyr?+0=wyGBc24Vg|"/>
+      <block type="type_other" id="c4IjxjLP1:pm*fQRwl$$">
+        <field name="TYPE">bs_card_image</field>
+      </block>
     </value>
     <value name="BOTTOMTYPE">
       <shadow type="type_null" id="_w,k7w+L_KghOe+y+I:1"/>
+      <block type="type_other" id="LT*d3sHQ6a|;]SG_1l{I">
+        <field name="TYPE">bs_card_image</field>
+      </block>
     </value>
     <value name="COLOUR">
       <block type="colour_hue" id="*X+(OoIV~QJFUD/L+`!7">
@@ -982,9 +982,15 @@
     </value>
     <value name="TOPTYPE">
       <shadow type="type_null" id="Efw=19_)apF+}[1y%Gbs"/>
+      <block type="type_other" id="OCZLTX/+W5MrRuD?7Uh0">
+        <field name="TYPE">bs_row</field>
+      </block>
     </value>
     <value name="BOTTOMTYPE">
       <shadow type="type_null" id="%B}(/QQ{+w@(#SYKB-q,"/>
+      <block type="type_other" id="eJIz].0}C.22[f}Td?C_">
+        <field name="TYPE">bs_row</field>
+      </block>
     </value>
     <value name="COLOUR">
       <block type="colour_hue" id=";y8bIuNNgrFm3*}Swo;X">
@@ -1028,9 +1034,15 @@
     </value>
     <value name="TOPTYPE">
       <shadow type="type_null" id="!av!43a:fNczCwjQpAwy"/>
+      <block type="type_other" id="3uDG;SF@fby(=qF4x|DV">
+        <field name="TYPE">bs_col</field>
+      </block>
     </value>
     <value name="BOTTOMTYPE">
       <shadow type="type_null" id="f3u%Dpu0+9TX0Cgt1SP9"/>
+      <block type="type_other" id="BxX5@5P}:gHubfqP5k:n">
+        <field name="TYPE">bs_col</field>
+      </block>
     </value>
     <value name="COLOUR">
       <block type="colour_hue" id="_p*nV@!W??H.|fH~#b:v">
@@ -1039,10 +1051,10 @@
       </block>
     </value>
   </block><block type="factory_base" id="C1Qpcx3=]x+zQ4J74rH^" deletable="false" movable="false" x="10" y="10">
-    <mutation connections="NONE"/>
+    <mutation connections="BOTH"/>
     <field name="NAME">bs_table</field>
     <field name="INLINE">AUTO</field>
-    <field name="CONNECTIONS">NONE</field>
+    <field name="CONNECTIONS">BOTH</field>
     <statement name="INPUTS">
       <block type="input_dummy" id="@~PfuKOD#gN(ZFv#Pik}">
         <field name="ALIGN">LEFT</field>
@@ -1129,6 +1141,12 @@
         <field name="TEXT"/>
       </block>
     </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="pKODGHfztV4f;GXT$.wl"/>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="(}fk0=$std$uO2PY1z%f"/>
+    </value>
     <value name="COLOUR">
       <block type="colour_hue" id="{CrPZif?eE,D]x-%O?$A">
         <mutation colour="#a5935b"/>
@@ -1174,9 +1192,15 @@
     </value>
     <value name="TOPTYPE">
       <shadow type="type_null" id="KO^~!jz98z-=70s#]6Pa"/>
+      <block type="type_other" id="lB4ts8gJWj6dDGTSuIpp">
+        <field name="TYPE">bs_table_row</field>
+      </block>
     </value>
     <value name="BOTTOMTYPE">
       <shadow type="type_null" id="*{bS%1X(OfnD;7RL4B.u"/>
+      <block type="type_other" id="6uJ:,4xSHkV=9bE4?9zV">
+        <field name="TYPE">bs_table_row</field>
+      </block>
     </value>
     <value name="COLOUR">
       <block type="colour_hue" id="-*HS(*I#9OCj;N0-(d^O">
@@ -1220,9 +1244,15 @@
     </value>
     <value name="TOPTYPE">
       <shadow type="type_null" id="]axpmP;Q7KzG7//4UuAZ"/>
+      <block type="type_other" id="U!SG-z;n+{{,VHIq[d`M">
+        <field name="TYPE">bs_table_cell</field>
+      </block>
     </value>
     <value name="BOTTOMTYPE">
       <shadow type="type_null" id="DTHvCB|=k]ICN`[$|5ZB"/>
+      <block type="type_other" id="z/UT*QIVx)]a7.nX5Y|[">
+        <field name="TYPE">bs_table_cell</field>
+      </block>
     </value>
     <value name="COLOUR">
       <block type="colour_hue" id="/HC4P85~y*9`v`Tsp(i,">
