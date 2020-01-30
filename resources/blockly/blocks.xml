@@ -792,15 +792,35 @@
       </block>
     </value>
     <value name="TOPTYPE">
-      <shadow type="type_null" id="`(5?^4-m93rK_Y4EsPBZ"/>
-      <block type="type_other" id="]lQ7@gdjQVZ6.EEi2x~I">
-        <field name="TYPE">bs_card_body</field>
+      <shadow type="type_null" id="!l~Q^`?%h9l8=k_h,}{V"/>
+      <block type="type_group" id="9,Mx^j|cz(ks]h-8%QEC">
+        <mutation types="2"/>
+        <value name="TYPE0">
+          <block type="type_other" id="Jly`Jw@YWr0]`vo1LIKf">
+            <field name="TYPE">bs_card_image</field>
+          </block>
+        </value>
+        <value name="TYPE1">
+          <block type="type_other" id="P9h]zhsih!,j_8:}Io[2">
+            <field name="TYPE">bs_card_body</field>
+          </block>
+        </value>
       </block>
     </value>
     <value name="BOTTOMTYPE">
-      <shadow type="type_null" id="|N_!Z*4CP31vQMtugcBN"/>
-      <block type="type_other" id="z0Mk4N^{aoMc4nIFUU1+">
-        <field name="TYPE">bs_card_body</field>
+      <shadow type="type_null" id="48pn#mgr%sayd;Pv(V/9"/>
+      <block type="type_group" id="HLzt{t)%7v(/rperv]DI">
+        <mutation types="2"/>
+        <value name="TYPE0">
+          <block type="type_other" id="X7lld6Sc0DN*zgS|SV2X">
+            <field name="TYPE">bs_card_image</field>
+          </block>
+        </value>
+        <value name="TYPE1">
+          <block type="type_other" id="ODWKGD8Hso,V`rXD_KUP">
+            <field name="TYPE">bs_card_body</field>
+          </block>
+        </value>
       </block>
     </value>
     <value name="COLOUR">
@@ -877,15 +897,35 @@
       </block>
     </value>
     <value name="TOPTYPE">
-      <shadow type="type_null" id="uadCyr?+0=wyGBc24Vg|"/>
-      <block type="type_other" id="c4IjxjLP1:pm*fQRwl$$">
-        <field name="TYPE">bs_card_image</field>
+      <shadow type="type_null" id="^D6J.ToazvbPf(YzkP?l"/>
+      <block type="type_group" id="~!ssQUR!@0%,bNi,!,s)">
+        <mutation types="2"/>
+        <value name="TYPE0">
+          <block type="type_other" id="c4IjxjLP1:pm*fQRwl$$">
+            <field name="TYPE">bs_card_image</field>
+          </block>
+        </value>
+        <value name="TYPE1">
+          <block type="type_other" id="LT*d3sHQ6a|;]SG_1l{I">
+            <field name="TYPE">bs_card_body</field>
+          </block>
+        </value>
       </block>
     </value>
     <value name="BOTTOMTYPE">
-      <shadow type="type_null" id="_w,k7w+L_KghOe+y+I:1"/>
-      <block type="type_other" id="LT*d3sHQ6a|;]SG_1l{I">
-        <field name="TYPE">bs_card_image</field>
+      <shadow type="type_null" id="ZZvG#;;w|05/sQE~b`dz"/>
+      <block type="type_group" id="m3#WMK)C8Sc@*+(E[Z.`">
+        <mutation types="2"/>
+        <value name="TYPE0">
+          <block type="type_other" id="*wcY3Q^m6(U.AXXz5/j7">
+            <field name="TYPE">bs_card_image</field>
+          </block>
+        </value>
+        <value name="TYPE1">
+          <block type="type_other" id=",~Se4d$[,+o5}FxnD]EP">
+            <field name="TYPE">bs_card_body</field>
+          </block>
+        </value>
       </block>
     </value>
     <value name="COLOUR">
