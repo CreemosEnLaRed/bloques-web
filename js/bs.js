@@ -114,13 +114,58 @@ function cardImageFromBlock() {
   );
 }
 
+class Container {
+  constructor(_attrs, childs) {
+    this.childs = childs;
+  }
+
+  toDom(indent) {
+    return div({class: 'container'}, indent, childsToDom(this, indent + 1));
+  }
+}
+
+function containerFromBlock() {
+  return new Container({}, getItems(this));
+}
+
+class Row {
+  constructor(_attrs, childs) {
+    this.childs = childs;
+  }
+
+  toDom(indent) {
+    return div({class: 'row'}, indent, childsToDom(this, indent + 1));
+  }
+}
+
+function rowFromBlock() {
+  return new Row({}, getItems(this));
+}
+
+class Col {
+  constructor(_attrs, childs) {
+    this.childs = childs;
+  }
+
+  toDom(indent) {
+    return div({class: 'col'}, indent, childsToDom(this, indent + 1));
+  }
+}
+
+function colFromBlock() {
+  return new Col({}, getItems(this));
+}
+
 const TAGS = [
     'bs_alert',
     'bs_button',
     'bs_badge',
     'bs_card',
     'bs_card_body',
-    'bs_card_image'
+    'bs_card_image',
+    'bs_container',
+    'bs_row',
+    'bs_col'
   ],
   SERIALIZERS = {
     bs_alert: alertFromBlock,
@@ -128,7 +173,10 @@ const TAGS = [
     bs_badge: badgeFromBlock,
     bs_card: cardFromBlock,
     bs_card_body: cardBodyFromBlock,
-    bs_card_image: cardImageFromBlock
+    bs_card_image: cardImageFromBlock,
+    bs_container: containerFromBlock,
+    bs_row: rowFromBlock,
+    bs_col: colFromBlock
   };
 
 function setup(Blockly) {
