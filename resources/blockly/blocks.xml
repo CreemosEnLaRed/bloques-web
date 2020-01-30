@@ -835,38 +835,48 @@
             <field name="TEXT">Imagen de Carta</field>
             <next>
               <block type="field_input" id="lHHX*E2t]?h($eZu*@0#">
-                <field name="TEXT">img/rainbow.png</field>
+                <field name="TEXT">img/image.jpg</field>
                 <field name="FIELDNAME">SRC</field>
-                <next>
-                  <block type="field_static" id="Qo~A+|g_vOm1v|YPv}ep">
-                    <field name="TEXT">descripcion</field>
-                    <next>
-                      <block type="field_input" id="r|5ESTsU3`qk$n~!]DH7">
-                        <field name="TEXT">imagen de...</field>
-                        <field name="FIELDNAME">ALT</field>
-                        <next>
-                          <block type="field_static" id="*oMN/WCY8zbRmaw;$nVx">
-                            <field name="TEXT">posicion</field>
-                            <next>
-                              <block type="field_dropdown" id="06E#{bbw7N!y7iJgP0YF">
-                                <mutation options="[&quot;text&quot;,&quot;text&quot;]"/>
-                                <field name="FIELDNAME">TYPE</field>
-                                <field name="USER0">arriba</field>
-                                <field name="CPU0">top</field>
-                                <field name="USER1">abajo</field>
-                                <field name="CPU1">bottom</field>
-                              </block>
-                            </next>
-                          </block>
-                        </next>
-                      </block>
-                    </next>
-                  </block>
-                </next>
               </block>
             </next>
           </block>
         </statement>
+        <next>
+          <block type="input_dummy" id="Wvi10U+Jn_(!kNYamJ-`">
+            <field name="ALIGN">LEFT</field>
+            <statement name="FIELDS">
+              <block type="field_static" id="Qo~A+|g_vOm1v|YPv}ep">
+                <field name="TEXT">descripcion</field>
+                <next>
+                  <block type="field_input" id="r|5ESTsU3`qk$n~!]DH7">
+                    <field name="TEXT">imagen de...</field>
+                    <field name="FIELDNAME">ALT</field>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="input_dummy" id="2LP?4~ueZ56{wkE1@o;Q">
+                <field name="ALIGN">LEFT</field>
+                <statement name="FIELDS">
+                  <block type="field_static" id="*oMN/WCY8zbRmaw;$nVx">
+                    <field name="TEXT">posicion</field>
+                    <next>
+                      <block type="field_dropdown" id="06E#{bbw7N!y7iJgP0YF">
+                        <mutation options="[&quot;text&quot;,&quot;text&quot;]"/>
+                        <field name="FIELDNAME">TYPE</field>
+                        <field name="USER0">arriba</field>
+                        <field name="CPU0">top</field>
+                        <field name="USER1">abajo</field>
+                        <field name="CPU1">bottom</field>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
       </block>
     </statement>
     <value name="TOOLTIP">
