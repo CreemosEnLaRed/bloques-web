@@ -1,6 +1,13 @@
 //@format
-import {div, img} from './dom.js';
-import {childsToDom, setupTags, fieldValue, getItems} from './domgen.js';
+import {div, img, table, thead, tbody, tr, td} from './dom.js';
+import {
+  childsToDom,
+  childsFieldToDom,
+  setupTags,
+  fieldValue,
+  checkboxValue,
+  getItems
+} from './domgen.js';
 
 class Alert {
   constructor(attrs, childs) {
@@ -156,6 +163,65 @@ function colFromBlock() {
   return new Col({}, getItems(this));
 }
 
+class Table {
+  constructor({border, striped}, head, body) {
+    this.border = border;
+    this.striped = striped;
+    this.head = head;
+    this.body = body;
+  }
+
+  toDom(indent) {
+    const cn =
+      'table' +
+      (this.border ? ' table-bordered' : '') +
+      (this.striped ? ' table-striped' : '');
+    return table({class: cn}, indent, [
+      thead({}, indent + 1, childsFieldToDom(this.head, indent + 2)),
+      tbody({}, indent + 1, childsFieldToDom(this.body, indent + 2))
+    ]);
+  }
+}
+
+function tableFromBlock() {
+  return new Table(
+    {
+      border: checkboxValue(this, 'BORDER'),
+      striped: checkboxValue(this, 'STRIPED')
+    },
+    getItems(this, 'HEAD'),
+    getItems(this, 'BODY')
+  );
+}
+
+class TableRow {
+  constructor(_attrs, childs) {
+    this.childs = childs;
+  }
+
+  toDom(indent) {
+    return tr({}, indent, childsToDom(this, indent + 1));
+  }
+}
+
+function tableRowFromBlock() {
+  return new TableRow({}, getItems(this));
+}
+
+class TableCell {
+  constructor(_attrs, childs) {
+    this.childs = childs;
+  }
+
+  toDom(indent) {
+    return td({}, indent, childsToDom(this, indent + 1));
+  }
+}
+
+function tableCellFromBlock() {
+  return new TableCell({}, getItems(this));
+}
+
 const TAGS = [
     'bs_alert',
     'bs_button',
@@ -165,7 +231,10 @@ const TAGS = [
     'bs_card_image',
     'bs_container',
     'bs_row',
-    'bs_col'
+    'bs_col',
+    'bs_table',
+    'bs_table_row',
+    'bs_table_cell'
   ],
   SERIALIZERS = {
     bs_alert: alertFromBlock,
@@ -176,7 +245,10 @@ const TAGS = [
     bs_card_image: cardImageFromBlock,
     bs_container: containerFromBlock,
     bs_row: rowFromBlock,
-    bs_col: colFromBlock
+    bs_col: colFromBlock,
+    bs_table: tableFromBlock,
+    bs_table_row: tableRowFromBlock,
+    bs_table_cell: tableCellFromBlock
   };
 
 function setup(Blockly) {

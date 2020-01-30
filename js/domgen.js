@@ -2,15 +2,24 @@
 import {getChildBlockList} from './blockly.js';
 
 function childsToDom(obj, indent) {
-  return obj.childs.map((child, _i, _it) => child.toDom(indent));
+  return childsFieldToDom(obj.childs, indent);
+}
+
+function childsFieldToDom(childs, indent) {
+  return childs.map((child, _i, _it) => child.toDom(indent));
 }
 
 function fieldValue(block, name) {
   return block.getFieldValue(name);
 }
 
-function getItems(block) {
-  const children = getChildBlockList(block, 'ITEMS');
+function checkboxValue(block, name) {
+  return fieldValue(block, name) === 'TRUE';
+}
+
+function getItems(block, fieldName = 'ITEMS') {
+  fieldName;
+  const children = getChildBlockList(block, fieldName);
   return children.map((child, _i, _it) => child.hsToDom());
 }
 
@@ -22,4 +31,11 @@ function setupTags(Blockly, tags, serializers) {
   });
 }
 
-export {childsToDom, setupTags, fieldValue, getItems};
+export {
+  childsToDom,
+  childsFieldToDom,
+  setupTags,
+  fieldValue,
+  checkboxValue,
+  getItems
+};
