@@ -1,5 +1,18 @@
 //@format
-import {div, img, table, thead, tbody, tr, td} from './dom.js';
+import {
+  div,
+  img,
+  table,
+  thead,
+  tbody,
+  tr,
+  td,
+  a,
+  ul,
+  li,
+  nav,
+  ct
+} from './dom.js';
 import {
   childsToDom,
   childsFieldToDom,
@@ -222,6 +235,69 @@ function tableCellFromBlock() {
   return new TableCell({}, getItems(this));
 }
 
+const NAVBAR_TYPE_TO_CN = {
+  light: 'navbar navbar-expand-lg navbar-light bg-light',
+  dark: 'navbar navbar-expand-lg navbar-dark bg-dark',
+  primary: 'navbar navbar-expand-lg navbar-dark bg-primary',
+  secondary: 'navbar navbar-expand-lg navbar-dark bg-secondary',
+  info: 'navbar navbar-expand-lg navbar-dark bg-info',
+  success: 'navbar navbar-expand-lg navbar-dark bg-success',
+  danger: 'navbar navbar-expand-lg navbar-dark bg-danger',
+  warning: 'navbar navbar-expand-lg navbar-dark bg-warning'
+};
+class NavBar {
+  constructor({type, title}, childs) {
+    this.type = type;
+    this.title = title;
+    this.childs = childs;
+  }
+
+  toDom(indent) {
+    const cn = NAVBAR_TYPE_TO_CN[this.type];
+
+    return nav({class: cn}, indent, [
+      a({class: 'navbar-brand', href: '#'}, indent + 1, [ct(this.title)]),
+      div({class: 'collapse navbar-collapse'}, indent + 1, [
+        ul(
+          {class: 'navbar-nav mr-auto'},
+          indent + 2,
+          childsToDom(this, indent + 3)
+        )
+      ])
+    ]);
+  }
+}
+
+function navbarFromBlock() {
+  return new NavBar(
+    {
+      type: fieldValue(this, 'TYPE'),
+      title: fieldValue(this, 'TITLE')
+    },
+    getItems(this)
+  );
+}
+
+class NavItem {
+  constructor({text, href}) {
+    this.text = text;
+    this.href = href;
+  }
+
+  toDom(indent) {
+    return li({class: 'nav-item'}, indent, [
+      a({class: 'nav-link', href: this.href}, indent + 1, [ct(this.text)])
+    ]);
+  }
+}
+
+function navItemFromBlock() {
+  return new NavItem({
+    text: fieldValue(this, 'TEXT'),
+    href: fieldValue(this, 'HREF')
+  });
+}
+
 const TAGS = [
     'bs_alert',
     'bs_button',
@@ -234,7 +310,9 @@ const TAGS = [
     'bs_col',
     'bs_table',
     'bs_table_row',
-    'bs_table_cell'
+    'bs_table_cell',
+    'bs_navbar',
+    'bs_navitem'
   ],
   SERIALIZERS = {
     bs_alert: alertFromBlock,
@@ -248,7 +326,9 @@ const TAGS = [
     bs_col: colFromBlock,
     bs_table: tableFromBlock,
     bs_table_row: tableRowFromBlock,
-    bs_table_cell: tableCellFromBlock
+    bs_table_cell: tableCellFromBlock,
+    bs_navbar: navbarFromBlock,
+    bs_navitem: navItemFromBlock
   };
 
 function setup(Blockly) {

@@ -3,11 +3,13 @@
 const CAN_INDENT = {
   div: true,
   ul: true,
+  li: true,
   ol: true,
   table: true,
   thead: true,
   tbody: true,
-  tr: true
+  tr: true,
+  nav: true
 };
 function ce(tagName, attrs, indentLevel, childs) {
   const node = document.createElement(tagName);
@@ -97,6 +99,27 @@ const div = makeTag('div'),
   thead = makeTag('thead'),
   tbody = makeTag('tbody'),
   tr = makeTag('tr'),
-  td = makeTag('td');
+  td = makeTag('td'),
+  ul = makeTag('ul'),
+  li = makeTag('li'),
+  a = makeTag('a'),
+  nav = makeTag('nav');
 
-export {ce, ct, div, span, img, table, thead, tbody, tr, td, byId, setDisplay};
+export {
+  ce,
+  ct,
+  div,
+  span,
+  img,
+  table,
+  thead,
+  tbody,
+  tr,
+  td,
+  a,
+  ul,
+  li,
+  nav,
+  byId,
+  setDisplay
+};

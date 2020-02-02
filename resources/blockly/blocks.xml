@@ -518,19 +518,19 @@
               <block type="field_dropdown" id="Z+!.0R1m?~)U)tJ)O.|P">
                 <mutation options="[&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;]"/>
                 <field name="FIELDNAME">TYPE</field>
-                <field name="USER0">info</field>
+                <field name="USER0">informacion</field>
                 <field name="CPU0">info</field>
                 <field name="USER1">peligro</field>
                 <field name="CPU1">danger</field>
                 <field name="USER2">advertencia</field>
                 <field name="CPU2">warning</field>
-                <field name="USER3">primary</field>
+                <field name="USER3">primaria</field>
                 <field name="CPU3">primary</field>
                 <field name="USER4">exito</field>
                 <field name="CPU4">success</field>
-                <field name="USER5">claro</field>
+                <field name="USER5">clara</field>
                 <field name="CPU5">light</field>
-                <field name="USER6">oscuro</field>
+                <field name="USER6">oscura</field>
                 <field name="CPU6">dark</field>
               </block>
             </next>
@@ -1298,6 +1298,144 @@
       <block type="colour_hue" id="/HC4P85~y*9`v`Tsp(i,">
         <mutation colour="#a5935b"/>
         <field name="HUE">45</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="p/=VQP.DO/M*${2{[T2N" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="BOTH"/>
+    <field name="NAME">bs_navbar</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="q8qZ2H[T:gvlAf}cg/Bm">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="hShj)Dnl,}_i5)Q/CRjt">
+            <field name="TEXT">Barra de Navegacion</field>
+            <next>
+              <block type="field_dropdown" id="--fjma1^[?z@5S_26F6+">
+                <mutation options="[&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;]"/>
+                <field name="FIELDNAME">TYPE</field>
+                <field name="USER0">clara</field>
+                <field name="CPU0">light</field>
+                <field name="USER1">oscura</field>
+                <field name="CPU1">dark</field>
+                <field name="USER2">principal</field>
+                <field name="CPU2">primary</field>
+                <field name="USER3">secundaria</field>
+                <field name="CPU3">secondary</field>
+                <field name="USER4">informacion</field>
+                <field name="CPU4">info</field>
+                <field name="USER5">exito</field>
+                <field name="CPU5">success</field>
+                <field name="USER6">advertencia</field>
+                <field name="CPU6">warning</field>
+                <field name="USER7">peligro</field>
+                <field name="CPU7">danger</field>
+                <next>
+                  <block type="field_static" id="bY)3.1QBt|%w`V2utZC4">
+                    <field name="TEXT">con</field>
+                    <next>
+                      <block type="field_input" id=",Pym:AFH=Zx|Q?rl]vwt">
+                        <field name="TEXT">Titulo</field>
+                        <field name="FIELDNAME">TITLE</field>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="input_statement" id="|T11$)X@}-HgkoVvHV!_">
+            <field name="INPUTNAME">ITEMS</field>
+            <field name="ALIGN">LEFT</field>
+            <value name="TYPE">
+              <shadow type="type_null" id="iJ3R?,S9DiHyL{9+3M3J"/>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="]d$nQUK-[4m*h#RK$vZT" deletable="false" movable="false">
+        <field name="TEXT"/>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="la4tN|oa3:_.OB{`5seQ" deletable="false" movable="false">
+        <field name="TEXT"/>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="v4e+P5jrHQl2Fc#W-ysZ"/>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="Z/s)n*2.()~Ty.HEUdi|"/>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="M`)j0OgQA[[NmiFH^bTu">
+        <mutation colour="#5b67a5"/>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="X(IgRd@*!%UGoG?7g6hu" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="BOTH"/>
+    <field name="NAME">bs_navitem</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id=";U7i+PU|a(gv$YS1qs~`">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="#(dd+XdFwVl,wE%k0-c,">
+            <field name="TEXT">Navegacion</field>
+            <next>
+              <block type="field_input" id="EUAF_b@yA.!x8SCPTw1}">
+                <field name="TEXT">texto</field>
+                <field name="FIELDNAME">TEXT</field>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="input_dummy" id=";zlS`7H-,Xp~Z4VM2ov*">
+            <field name="ALIGN">RIGHT</field>
+            <statement name="FIELDS">
+              <block type="field_static" id="j0$oqA/6]*2v~O]{|y0R">
+                <field name="TEXT">a</field>
+                <next>
+                  <block type="field_input" id="pe;:ZWiq-8.^9?tfDM@p">
+                    <field name="TEXT">http://duckduckgo.com</field>
+                    <field name="FIELDNAME">HREF</field>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="~oX6gE=CIL`mTMD6VHWP" deletable="false" movable="false">
+        <field name="TEXT"/>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="betj*6Z56Hn5812,Wru`" deletable="false" movable="false">
+        <field name="TEXT"/>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="ubLmv6e%Qs#P),IO+VdP"/>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="lV8|KUQRr9[a,WO9rN1+"/>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="I}:]H?K;~e?^=C#@H4Y^">
+        <mutation colour="#5b67a5"/>
+        <field name="HUE">230</field>
       </block>
     </value>
   </block></xml>
