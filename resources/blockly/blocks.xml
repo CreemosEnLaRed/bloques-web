@@ -1438,4 +1438,131 @@
         <field name="HUE">230</field>
       </block>
     </value>
+  </block><block type="factory_base" id="{N%WV-r#_L[i^,(.mXhu" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="BOTH"/>
+    <field name="NAME">bs_spacing</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="ylUrE3?*eR)2kgv*M-{[">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="$+iO+Pdkd^ZmBG%Hy(^g">
+            <field name="TEXT">margen exterior</field>
+            <next>
+              <block type="field_dropdown" id="Fc@.YyXvpe_Mh6oVK3v1">
+                <mutation options="[&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;]"/>
+                <field name="FIELDNAME">MARGIN</field>
+                <field name="USER0">todos</field>
+                <field name="CPU0">m-</field>
+                <field name="USER1">vertical</field>
+                <field name="CPU1">my-</field>
+                <field name="USER2">horizonal</field>
+                <field name="CPU2">mx-</field>
+                <field name="USER3">superior</field>
+                <field name="CPU3">mt-</field>
+                <field name="USER4">derecho</field>
+                <field name="CPU4">mr-</field>
+                <field name="USER5">inferior</field>
+                <field name="CPU5">mb-</field>
+                <field name="USER6">izquierdo</field>
+                <field name="CPU6">ml-</field>
+                <next>
+                  <block type="field_dropdown" id="=:2XN%Rb5x{hQ9s~T(eF">
+                    <mutation options="[&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;]"/>
+                    <field name="FIELDNAME">MARGIN_LEVEL</field>
+                    <field name="USER0">0</field>
+                    <field name="CPU0">0</field>
+                    <field name="USER1">1</field>
+                    <field name="CPU1">1</field>
+                    <field name="USER2">2</field>
+                    <field name="CPU2">2</field>
+                    <field name="USER3">3</field>
+                    <field name="CPU3">3</field>
+                    <field name="USER4">4</field>
+                    <field name="CPU4">4</field>
+                    <field name="USER5">5</field>
+                    <field name="CPU5">5</field>
+                    <next>
+                      <block type="field_static" id="!N}sm+2V)kH.P4lg*Z?2">
+                        <field name="TEXT">interior</field>
+                        <next>
+                          <block type="field_dropdown" id="$;3E-za`-THZ%AI=VH@i">
+                            <mutation options="[&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;]"/>
+                            <field name="FIELDNAME">PADDING</field>
+                            <field name="USER0">todos</field>
+                            <field name="CPU0">p-</field>
+                            <field name="USER1">vertical</field>
+                            <field name="CPU1">py-</field>
+                            <field name="USER2">horizonal</field>
+                            <field name="CPU2">px-</field>
+                            <field name="USER3">superior</field>
+                            <field name="CPU3">pt-</field>
+                            <field name="USER4">derecho</field>
+                            <field name="CPU4">pr-</field>
+                            <field name="USER5">inferior</field>
+                            <field name="CPU5">mb-</field>
+                            <field name="USER6">izquierdo</field>
+                            <field name="CPU6">pl-</field>
+                            <next>
+                              <block type="field_dropdown" id="C9fZl.%vxX2$3p$w2]W1">
+                                <mutation options="[&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;]"/>
+                                <field name="FIELDNAME">PADDING_LEVEL</field>
+                                <field name="USER0">0</field>
+                                <field name="CPU0">0</field>
+                                <field name="USER1">1</field>
+                                <field name="CPU1">1</field>
+                                <field name="USER2">2</field>
+                                <field name="CPU2">2</field>
+                                <field name="USER3">3</field>
+                                <field name="CPU3">3</field>
+                                <field name="USER4">4</field>
+                                <field name="CPU4">4</field>
+                                <field name="USER5">5</field>
+                                <field name="CPU5">5</field>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="input_statement" id="`/:NIvX8iCHCOLJ;-d_t">
+            <field name="INPUTNAME">ITEMS</field>
+            <field name="ALIGN">LEFT</field>
+            <value name="TYPE">
+              <shadow type="type_null" id=";P~;gHeZ)R}=#G{vTK*s"/>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="my(`hdtL@IWC-r5g1Foj" deletable="false" movable="false">
+        <field name="TEXT"/>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="L:m^|`v8UVO)ID?NQY_`" deletable="false" movable="false">
+        <field name="TEXT"/>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="YkAVMC$d*Ke4#=8^u6{c"/>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="4U`4aY!zd`f7sKs#i.x?"/>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="A@8~3}We%z7`cJV%_;cM">
+        <mutation colour="#5b6da5"/>
+        <field name="HUE">225</field>
+      </block>
+    </value>
   </block></xml>

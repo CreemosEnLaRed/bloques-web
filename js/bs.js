@@ -298,6 +298,43 @@ function navItemFromBlock() {
   });
 }
 
+class Spacing {
+  constructor({margin, marginLevel, padding, paddingLevel}, childs) {
+    this.margin = margin;
+    this.marginLevel = marginLevel;
+    this.padding = padding;
+    this.paddingLevel = paddingLevel;
+    this.childs = childs;
+  }
+
+  toDom(indent) {
+    return div(
+      {
+        class:
+          this.margin +
+          this.marginLevel +
+          ' ' +
+          this.padding +
+          this.paddingLevel
+      },
+      indent,
+      childsToDom(this, indent + 1)
+    );
+  }
+}
+
+function spacingFromBlock() {
+  return new Spacing(
+    {
+      margin: fieldValue(this, 'MARGIN'),
+      marginLevel: fieldValue(this, 'MARGIN_LEVEL'),
+      padding: fieldValue(this, 'PADDING'),
+      paddingLevel: fieldValue(this, 'PADDING_LEVEL')
+    },
+    getItems(this)
+  );
+}
+
 const TAGS = [
     'bs_alert',
     'bs_button',
@@ -312,7 +349,8 @@ const TAGS = [
     'bs_table_row',
     'bs_table_cell',
     'bs_navbar',
-    'bs_navitem'
+    'bs_navitem',
+    'bs_spacing'
   ],
   SERIALIZERS = {
     bs_alert: alertFromBlock,
@@ -328,7 +366,8 @@ const TAGS = [
     bs_table_row: tableRowFromBlock,
     bs_table_cell: tableCellFromBlock,
     bs_navbar: navbarFromBlock,
-    bs_navitem: navItemFromBlock
+    bs_navitem: navItemFromBlock,
+    bs_spacing: spacingFromBlock
   };
 
 function setup(Blockly) {
