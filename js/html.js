@@ -51,41 +51,19 @@ function tagFromBlock() {
   );
 }
 
-function attrFromBlock(obj, key) {
-  const next = inputValue(obj, 'NEXT').connection.targetBlock();
+function attrFromBlock() {
+  const next = inputValue(this, 'NEXT').connection.targetBlock();
   return new Attr({
-    key: key,
-    value: fieldValue(obj, 'VALUE'),
+    key: fieldValue(this, 'KEY'),
+    value: fieldValue(this, 'VALUE'),
     next: next === null ? null : next.hsToDom()
   });
 }
 
-function classFromBlock() {
-  return attrFromBlock(this, 'class');
-}
-function hrefFromBlock() {
-  return attrFromBlock(this, 'href');
-}
-function srcFromBlock() {
-  return attrFromBlock(this, 'src');
-}
-function altFromBlock() {
-  return attrFromBlock(this, 'alt');
-}
-
-const TAGS = [
-    'html_tag',
-    'html_attr_class',
-    'html_attr_href',
-    'html_attr_src',
-    'html_attr_alt'
-  ],
+const TAGS = ['html_tag', 'html_attr'],
   SERIALIZERS = {
     html_tag: tagFromBlock,
-    html_attr_class: classFromBlock,
-    html_attr_href: hrefFromBlock,
-    html_attr_src: srcFromBlock,
-    html_attr_alt: altFromBlock
+    html_attr: attrFromBlock
   };
 
 function setup(Blockly) {
