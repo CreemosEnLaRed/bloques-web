@@ -13,6 +13,10 @@ function fieldValue(block, name) {
   return block.getFieldValue(name);
 }
 
+function inputValue(block, name) {
+  return block.getInput(name);
+}
+
 function checkboxValue(block, name) {
   return fieldValue(block, name) === 'TRUE';
 }
@@ -36,6 +40,7 @@ export {
   childsFieldToDom,
   setupTags,
   fieldValue,
+  inputValue,
   checkboxValue,
   getItems
 };

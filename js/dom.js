@@ -103,7 +103,8 @@ const div = makeTag('div'),
   ul = makeTag('ul'),
   li = makeTag('li'),
   a = makeTag('a'),
-  nav = makeTag('nav');
+  nav = makeTag('nav'),
+  button = makeTag('button');
 
 export {
   ce,
@@ -120,6 +121,7 @@ export {
   ul,
   li,
   nav,
+  button,
   byId,
   setDisplay
 };

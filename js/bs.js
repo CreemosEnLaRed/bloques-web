@@ -11,6 +11,7 @@ import {
   ul,
   li,
   nav,
+  button,
   ct
 } from './dom.js';
 import {
@@ -48,7 +49,7 @@ class Button {
   }
 
   toDom(indent) {
-    return div(
+    return button(
       {class: 'btn btn-' + this.type},
       indent,
       childsToDom(this, indent + 1)

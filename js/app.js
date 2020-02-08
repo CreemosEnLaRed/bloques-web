@@ -4,6 +4,7 @@
 import {byId, setDisplay, ct} from './dom.js';
 import {setup as setupHS} from './hs.js';
 import {setup as setupBS} from './bs.js';
+import {setup as setupHTML} from './html.js';
 import {getBlockListFromBlock} from './blockly.js';
 import {readFirstInputFileAsText} from './file.js';
 import {downloadAs} from './download.js';
@@ -12,8 +13,11 @@ function onWorkspaceUpdate(_e, workspace, targetDomNode, editor) {
   targetDomNode.innerHTML = '';
   workspace.getTopBlocks(true).forEach((block, _i, _it) =>
     getBlockListFromBlock(block).forEach((childBlock, _j, _it1) => {
-      targetDomNode.appendChild(childBlock.hsToDom().toDom(0));
-      targetDomNode.appendChild(ct('\n\n'));
+      const node = childBlock.hsToDom().toDom(0);
+      if (node !== null) {
+        targetDomNode.appendChild(node);
+        targetDomNode.appendChild(ct('\n\n'));
+      }
     })
   );
 
@@ -69,6 +73,7 @@ function main() {
   );
   setupHS(Blockly);
   setupBS(Blockly);
+  setupHTML(Blockly);
 
   tabPagina.addEventListener('click', _ => {
     hideAndShow([targetHTMLNode, fileSectionNode], targetDomNode);
