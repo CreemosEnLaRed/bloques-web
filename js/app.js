@@ -9,7 +9,8 @@ import {getBlockListFromBlock} from './blockly.js';
 import {readFirstInputFileAsText} from './file.js';
 import {downloadAs} from './download.js';
 
-function onWorkspaceUpdate(_e, workspace, targetDomNode, editor) {
+const BLOCK_CHANGE = Blockly.Events.BLOCK_CHANGE;
+function onWorkspaceUpdate(e, workspace, targetDomNode, editor) {
   targetDomNode.innerHTML = '';
   workspace.getTopBlocks(true).forEach((block, _i, _it) =>
     getBlockListFromBlock(block).forEach((childBlock, _j, _it1) => {
@@ -20,6 +21,13 @@ function onWorkspaceUpdate(_e, workspace, targetDomNode, editor) {
       }
     })
   );
+
+  if (e.type === BLOCK_CHANGE) {
+    if (e.element === 'field' && e.name === 'TAG') {
+      const block = workspace.getBlockById(e.blockId);
+      block.setFieldValue(e.newValue, 'TAG_CLOSE');
+    }
+  }
 
   editor.setValue(targetDomNode.innerHTML);
 }

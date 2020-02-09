@@ -1720,28 +1720,64 @@
   </block><block type="factory_base" id="_wD0yVPK;B94}oB?j27r" deletable="false" movable="false" x="10" y="10">
     <mutation connections="BOTH"/>
     <field name="NAME">html_tag_raw</field>
-    <field name="INLINE">AUTO</field>
+    <field name="INLINE">INT</field>
     <field name="CONNECTIONS">BOTH</field>
     <statement name="INPUTS">
       <block type="input_value" id="S!/2x:bm8p@m%5_p;62G">
         <field name="INPUTNAME">ATTRS</field>
         <field name="ALIGN">LEFT</field>
         <statement name="FIELDS">
-          <block type="field_input" id="JwV2zYlcLAo/A5mVYLRD">
-            <field name="TEXT">tag</field>
-            <field name="FIELDNAME">TAG</field>
+          <block type="field_static" id="{40JW]|H2(Z-7A6VN9*7">
+            <field name="TEXT">&lt;</field>
+            <next>
+              <block type="field_input" id="JwV2zYlcLAo/A5mVYLRD">
+                <field name="TEXT">tag</field>
+                <field name="FIELDNAME">TAG</field>
+              </block>
+            </next>
           </block>
         </statement>
         <value name="TYPE">
           <shadow type="type_null" id="y(pj!1pbCNEUWhN0@~Xl"/>
         </value>
         <next>
-          <block type="input_statement" id="t(p!W||($=B;v]9/2lP~">
-            <field name="INPUTNAME">ITEMS</field>
-            <field name="ALIGN">LEFT</field>
-            <value name="TYPE">
-              <shadow type="type_null" id="imPu2ul%1TyRRi]Y.OPt"/>
-            </value>
+          <block type="input_dummy" id="ME;4523~S1n/KSUQ6nh{">
+            <field name="ALIGN">RIGHT</field>
+            <statement name="FIELDS">
+              <block type="field_static" id="f49,6DuOk]3f#K!N4C!3">
+                <field name="TEXT">&gt;</field>
+              </block>
+            </statement>
+            <next>
+              <block type="input_statement" id="t(p!W||($=B;v]9/2lP~">
+                <field name="INPUTNAME">ITEMS</field>
+                <field name="ALIGN">LEFT</field>
+                <value name="TYPE">
+                  <shadow type="type_null" id="imPu2ul%1TyRRi]Y.OPt"/>
+                </value>
+                <next>
+                  <block type="input_dummy" id="Q=aQuXm.L4^xcrq%Y7Z5">
+                    <field name="ALIGN">LEFT</field>
+                    <statement name="FIELDS">
+                      <block type="field_static" id=";zhB77tP98ObDJ]Di6K$">
+                        <field name="TEXT">&lt;/</field>
+                        <next>
+                          <block type="field_label_serializable" id=":jh`;AYqrsZ,a`5jL3wj">
+                            <field name="TEXT">tag</field>
+                            <field name="FIELDNAME">TAG_CLOSE</field>
+                            <next>
+                              <block type="field_static" id="h,UMj(7sJzM+E=3bJ|Ne">
+                                <field name="TEXT">&gt;</field>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                  </block>
+                </next>
+              </block>
+            </next>
           </block>
         </next>
       </block>

@@ -12,11 +12,11 @@ const CAN_INDENT = {
   nav: true
 };
 function ce(tagName, attrs, indentLevel, childs) {
-  const node = document.createElement(tagName);
+  const node = document.createElement(tagName || 'div');
 
   if (attrs) {
     for (let key in attrs) {
-      node.setAttribute(key, attrs[key]);
+      node.setAttribute(key || 'class', attrs[key]);
     }
   }
 
