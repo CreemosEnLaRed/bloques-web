@@ -51,6 +51,17 @@ function tagFromBlock() {
   );
 }
 
+function tagRawFromBlock() {
+  const attrs = inputValue(this, 'ATTRS').connection.targetBlock();
+  return new Tag(
+    {
+      tag: fieldValue(this, 'TAG'),
+      attrs: attrs === null ? null : attrs.hsToDom()
+    },
+    getItems(this)
+  );
+}
+
 function attrFromBlock() {
   const next = inputValue(this, 'NEXT').connection.targetBlock();
   return new Attr({
@@ -60,10 +71,21 @@ function attrFromBlock() {
   });
 }
 
-const TAGS = ['html_tag', 'html_attr'],
+function attrRawFromBlock() {
+  const next = inputValue(this, 'NEXT').connection.targetBlock();
+  return new Attr({
+    key: fieldValue(this, 'KEY'),
+    value: fieldValue(this, 'VALUE'),
+    next: next === null ? null : next.hsToDom()
+  });
+}
+
+const TAGS = ['html_tag', 'html_attr', 'html_tag_raw', 'html_attr_raw'],
   SERIALIZERS = {
     html_tag: tagFromBlock,
-    html_attr: attrFromBlock
+    html_attr: attrFromBlock,
+    html_tag_raw: tagRawFromBlock,
+    html_attr_raw: attrRawFromBlock
   };
 
 function setup(Blockly) {

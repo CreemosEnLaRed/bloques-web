@@ -1717,4 +1717,110 @@
         <field name="HUE">315</field>
       </block>
     </value>
+  </block><block type="factory_base" id="_wD0yVPK;B94}oB?j27r" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="BOTH"/>
+    <field name="NAME">html_tag_raw</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_value" id="S!/2x:bm8p@m%5_p;62G">
+        <field name="INPUTNAME">ATTRS</field>
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_input" id="JwV2zYlcLAo/A5mVYLRD">
+            <field name="TEXT">tag</field>
+            <field name="FIELDNAME">TAG</field>
+          </block>
+        </statement>
+        <value name="TYPE">
+          <shadow type="type_null" id="y(pj!1pbCNEUWhN0@~Xl"/>
+        </value>
+        <next>
+          <block type="input_statement" id="t(p!W||($=B;v]9/2lP~">
+            <field name="INPUTNAME">ITEMS</field>
+            <field name="ALIGN">LEFT</field>
+            <value name="TYPE">
+              <shadow type="type_null" id="imPu2ul%1TyRRi]Y.OPt"/>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="vz#(8$geiJcFzCap#SK#" deletable="false" movable="false">
+        <field name="TEXT"/>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="/*di*T}z-d{V]AuTuQCU" deletable="false" movable="false">
+        <field name="TEXT"/>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="-Ackx6_5bgf+8(PBrE{*"/>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="(9mM]^;Dn]mTnMXa|iCN"/>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="pm^QF~[bRl#a}J4bC%(8">
+        <mutation colour="#5ba56d"/>
+        <field name="HUE">135</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="+D0DN*aNVzUL0BB7/DbU" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="LEFT"/>
+    <field name="NAME">html_attr_raw</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_value" id="@b/YaYFC-wgNOv3}yWrI">
+        <field name="INPUTNAME">NEXT</field>
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_input" id="Z^NTG-(P:FHzgHwVc$j8">
+            <field name="TEXT">attr</field>
+            <field name="FIELDNAME">KEY</field>
+            <next>
+              <block type="field_static" id=",UEtIAtDsGLcrF]y}hKo">
+                <field name="TEXT">="</field>
+                <next>
+                  <block type="field_input" id="msRo8.gdm=@}l:zmyBx=">
+                    <field name="TEXT"/>
+                    <field name="FIELDNAME">VALUE</field>
+                    <next>
+                      <block type="field_static" id="{gB(H)R3NzDJFLjN8zw$">
+                        <field name="TEXT">"</field>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <value name="TYPE">
+          <shadow type="type_null" id=";+]GW{5(AGO?Z{X9jtDP"/>
+        </value>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="6}%9aEInY,L%Lxy7=Pf0" deletable="false" movable="false">
+        <field name="TEXT"/>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="~}fDq}VUUN`}cn8FCSEa" deletable="false" movable="false">
+        <field name="TEXT"/>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="0bM3qPU@FoidO[T^{p(^"/>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="()/EKE4Bx}HXN+r|`|};">
+        <mutation colour="#a55b5b"/>
+        <field name="HUE">0</field>
+      </block>
+    </value>
   </block></xml>
