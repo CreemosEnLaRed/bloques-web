@@ -62,15 +62,17 @@ function exportWorkspace(workspace) {
     xmlText = Blockly.Xml.domToText(xmlDom);
 
   downloadAs(
-    xmlText,
+    JSON.stringify({blocks: xmlText}),
     'bloques-' + new Date().toISOString().replace(/[: .]/g, '-') + '.bloques',
-    'application/xml'
+    'application/json'
   );
 }
 
 function importWorkspace(workspace, input) {
-  readFirstInputFileAsText(input, xmlText => {
-    const xmlDom = Blockly.Xml.textToDom(xmlText);
+  readFirstInputFileAsText(input, rawData => {
+    const data = JSON.parse(rawData),
+      xmlText = data.blocks,
+      xmlDom = Blockly.Xml.textToDom(xmlText);
     Blockly.Xml.domToWorkspace(xmlDom, workspace);
   });
 }
