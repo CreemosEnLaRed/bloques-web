@@ -34,7 +34,9 @@ function onWorkspaceUpdate(
     }
   }
 
-  setEditorValue(editor, targetDomNode.innerHTML, genFullPageNode.checked);
+  editor.setValue(
+    genEditorText(targetDomNode.innerHTML, genFullPageNode.checked)
+  );
 }
 
 const HTML_PREFIX = `<!DOCTYPE html>
@@ -52,9 +54,9 @@ const HTML_PREFIX = `<!DOCTYPE html>
   </body>
 </html>
 `;
-function setEditorValue(editor, bodyHTML, genFullPage) {
-  const html = genFullPage ? HTML_PREFIX + bodyHTML + HTML_SUFFIX : bodyHTML;
-  editor.setValue(html);
+
+function genEditorText(bodyHTML, genFullPage) {
+  return genFullPage ? HTML_PREFIX + bodyHTML + HTML_SUFFIX : bodyHTML;
 }
 
 function exportWorkspace(workspace) {
@@ -100,6 +102,7 @@ function main() {
     tabPagina = byId('tabPagina'),
     tabFile = byId('tabFile'),
     tabHTML = byId('tabHTML'),
+    downloadHTMLBtn = byId('downloadHTML'),
     exportBtn = byId('export'),
     importBtn = byId('import'),
     fileImport = byId('file-import');
@@ -110,6 +113,14 @@ function main() {
   setupHS(Blockly);
   setupBS(Blockly);
   setupHTML(Blockly);
+
+  downloadHTMLBtn.addEventListener('click', _ => {
+    downloadAs(
+      genEditorText(targetDomNode.innerHTML, genFullPageNode.checked),
+      'bloques-' + new Date().toISOString().replace(/[: .]/g, '-') + '.html',
+      'text/html'
+    );
+  });
 
   tabPagina.addEventListener('click', _ => {
     hideAndShow([targetHTMLNode, fileSectionNode], targetDomNode);

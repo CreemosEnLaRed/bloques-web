@@ -29,8 +29,17 @@
         <div id="targetDOM" class="p-3"><p>Arrastra bloques a la izquierda para ver el resultado aca.</div>
 
         <div id="targetHTML" style="height:80vh;margin-top:0.5em">
-          <label><input type="checkbox" id="htmlCompleto"><span class="ml-1">Pagina Completa</span></label>
           <div id="htmlEditor" style="height:78vh"></div>
+          <div class="row mt-3">
+            <div class="col">
+              <label style="padding-top:0.5em">
+                <input type="checkbox" id="htmlCompleto">
+                <span class="ml-1">Pagina Completa</span></label>
+            </div>
+            <div class="col text-right">
+              <button id="downloadHTML" class="btn btn-sm btn-primary">Descargar HTML</button>
+            </div>
+          </div>
         </div>
 
         <div id="fileSection" class="p-3" style="display:none">
