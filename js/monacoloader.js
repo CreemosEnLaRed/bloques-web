@@ -11,7 +11,7 @@ require.config({
 });
 
 require(['vs/editor/editor.main'], function() {
-  const node = document.getElementById('targetHTML'),
+  const node = document.getElementById('htmlEditor'),
     editor = monaco.editor.create(node, {
       value: '<!-- el codigo va a aparecer aca -->',
       language: 'html'

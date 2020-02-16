@@ -1,6 +1,5 @@
 //@format
 /*globals Blockly*/
-
 import {byId, setDisplay, ct} from './dom.js';
 import {setup as setupHS} from './hs.js';
 import {setup as setupBS} from './bs.js';
@@ -10,7 +9,13 @@ import {readFirstInputFileAsText} from './file.js';
 import {downloadAs} from './download.js';
 
 const BLOCK_CHANGE = Blockly.Events.BLOCK_CHANGE;
-function onWorkspaceUpdate(e, workspace, targetDomNode, editor) {
+function onWorkspaceUpdate(
+  e,
+  workspace,
+  targetDomNode,
+  editor,
+  genFullPageNode
+) {
   targetDomNode.innerHTML = '';
   workspace.getTopBlocks(true).forEach((block, _i, _it) =>
     getBlockListFromBlock(block).forEach((childBlock, _j, _it1) => {
@@ -29,7 +34,28 @@ function onWorkspaceUpdate(e, workspace, targetDomNode, editor) {
     }
   }
 
-  editor.setValue(targetDomNode.innerHTML);
+  setEditorValue(editor, targetDomNode.innerHTML, genFullPageNode.checked);
+}
+
+const HTML_PREFIX = `
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Mi Pagina</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  </head>
+  <body class="p-3">
+  <!-- v -->
+`,
+  HTML_SUFFIX = `
+  <!-- ^ -->
+  </body>
+</html>
+`;
+function setEditorValue(editor, bodyHTML, genFullPage) {
+  const html = genFullPage ? HTML_PREFIX + bodyHTML + HTML_SUFFIX : bodyHTML;
+  editor.setValue(html);
 }
 
 function exportWorkspace(workspace) {
@@ -68,6 +94,7 @@ function main() {
     }),
     targetDomNode = byId('targetDOM'),
     targetHTMLNode = byId('targetHTML'),
+    genFullPageNode = byId('htmlCompleto'),
     fileSectionNode = byId('fileSection'),
     tabPagina = byId('tabPagina'),
     tabFile = byId('tabFile'),
@@ -77,7 +104,7 @@ function main() {
     fileImport = byId('file-import');
 
   workspace.addChangeListener(e =>
-    onWorkspaceUpdate(e, workspace, targetDomNode, editor)
+    onWorkspaceUpdate(e, workspace, targetDomNode, editor, genFullPageNode)
   );
   setupHS(Blockly);
   setupBS(Blockly);
@@ -104,8 +131,8 @@ function main() {
   );
 }
 
-window.appOnEditorLoaded = function(ed, node) {
+window.appOnEditorLoaded = function(ed, _node) {
   editor = ed;
-  node.style.display = 'none';
+  byId('targetHTML').style.display = 'none';
 };
 main();
