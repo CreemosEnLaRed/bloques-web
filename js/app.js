@@ -37,8 +37,7 @@ function onWorkspaceUpdate(
   setEditorValue(editor, targetDomNode.innerHTML, genFullPageNode.checked);
 }
 
-const HTML_PREFIX = `
-<!DOCTYPE html>
+const HTML_PREFIX = `<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
